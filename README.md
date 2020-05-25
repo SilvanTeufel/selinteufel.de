@@ -1,6 +1,5 @@
-﻿﻿# Teufel-Engineering
+﻿﻿# selinteufel.de
 
 WWW.SELINTEUFEL.DE - Please take a look
 
-*written with create-react-app*
-# selinteufel.de
+_written with create-react-app_

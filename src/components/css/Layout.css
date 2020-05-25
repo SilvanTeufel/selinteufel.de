@@ -1,0 +1,25 @@
+.subheader {
+  color: rgb(97, 0, 0);
+  margin-top: -0.5em;
+  margin-left: 0.5em;
+  font-size: 2em;
+}
+.mainheader {
+  font-size: 5em;
+}
+.smallfont {
+  font-size: 0.65em;
+}
+
+.marginscissor {
+  margin-left: 0.1em;
+}
+
+.main-point {
+  color: rgb(104, 1, 1);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  filter: invert();
+}

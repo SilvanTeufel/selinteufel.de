@@ -5,17 +5,19 @@ import { animateScroll as scroller, Link } from "react-scroll";
 import Datenschutz from "../Footer/Datenschutz";
 import Home from "../Home";
 import { CustomRoute } from "./CustomRoute";
-import NavbarCollapse from "./NavbarCollapse";
 import Impressum from "../Footer/Impressum";
 import RouterDropdownField from "./RouterDropdownField";
 import "../css/Header.css";
 import "../css/Cursor.css";
+import "../css/Navbar.css";
+import "../css/Layout.css";
 
-const LogoImage = require("../Pictures/LogoINV1.png");
+var classNames = require("classnames");
+const LogoImage = require("../Pictures/LogoWideSelinTeufel2.png");
 
 interface MyComponentState {
   DropdownisOpen: boolean;
-  redirectkeys: any;
+
   routerstructure: any;
 }
 
@@ -24,74 +26,67 @@ class Router extends React.Component<{}, MyComponentState> {
     super(props);
     this.state = {
       DropdownisOpen: true,
-      redirectkeys: {
-        Philosophie: {
-          General: false
-        },
-        Leistungen: {
-          General: false
-        },
-        Projekte: {
-          General: false
-        },
-        Kontakt: {
-          General: false
-        }
-      },
       routerstructure: {
         navKeys: {
           Philosophie: { General: false },
-          Leistungen: {
+          Haare: {
             General: false,
-            Messsysteme: false,
-            Studien: false,
-            Datenbanken: false,
-            Sonstiges: false
           },
-          Projekte: {
+          Extensions: {
             General: false,
-            Studium: false,
-            Bachelorthesis: false,
-            Masterthesis: false,
-            Spektroskopie: false,
-            Temperatur: false,
-            Sensorik: false,
-            React: false,
-            Typescript: false,
-            "E-Bike": false,
-            SQL: false,
-            Mikrocontroller: false,
-            Angular: false
           },
-          Kontakt: { General: false }
+          Nageldesign: {
+            General: false,
+          },
+          Kosmetik: {
+            General: false,
+          },
+          "Per. Make-Up": {
+            General: false,
+          },
+          Team: {
+            General: false,
+          },
+          Kontakt: { General: false },
         },
         footKeys: {
           Kontakt: false,
           Impressum: false,
-          Datenschutz: false
+          Datenschutz: false,
         },
-        iconstate: {
-          Philosophie: false,
-          Leistungen: false,
-          Projekte: false,
-          Kontakt: false,
-          Messsysteme: false,
-          Studien: false,
-          Datenbanken: false,
-          Sonstiges: false,
-          Studium: false,
-          Bachelorthesis: false,
-          Masterthesis: false,
-          Spektroskopie: false,
-          Temperatur: false,
-          Sensorik: false,
-          React: false,
-          Typescript: false,
-          "E-Bike": false,
-          SQL: false,
-          Mikrocontroller: false
-        }
-      }
+        icon: {
+          Philosophie: {
+            state: false,
+            class: "fas fa-yin-yang fa-lg",
+          },
+          Haare: {
+            state: false,
+            class: "fas fa-cut fa-lg marginscissor",
+          },
+          Extensions: { state: false, class: "fas fa-ruler-combined fa-lg" },
+          Nageldesign: {
+            state: false,
+            class: "fas fa-paint-brush fa-lg",
+          },
+          Kosmetik: {
+            state: false,
+            class: "fas fa-sun fa-lg",
+          },
+          Team: {
+            state: false,
+            class: "fas fa-user fa-lg",
+          },
+          Kontakt: {
+            state: false,
+            class: "fas fa-phone fa-lg",
+          },
+          "Per. Make-Up": { state: false, class: "fas fa-moon fa-lg" },
+          General: {
+            state: false,
+            class: "fas fa-cut fa-lg",
+          },
+        },
+      },
     };
   }
 
@@ -100,8 +95,11 @@ class Router extends React.Component<{}, MyComponentState> {
   };
 
   closeDropDown = () => {
-    if (this.state.DropdownisOpen) {
+    console.log(window.innerWidth);
+    if (this.state.DropdownisOpen && window.innerWidth < 1200) {
       this.setState({ DropdownisOpen: false });
+    } else if (window.innerWidth >= 1200 && !this.state.DropdownisOpen) {
+      this.setState({ DropdownisOpen: true });
     }
   };
 
@@ -122,13 +120,14 @@ class Router extends React.Component<{}, MyComponentState> {
 
   toggleIconState = (key0: string, key1: string) => {
     const routerstructure = this.state.routerstructure;
-    for (var k in routerstructure.iconstate) {
+    for (var k in routerstructure.icon) {
+      console.log(k);
       if (k !== key0) {
-        routerstructure.iconstate[k] = false;
+        routerstructure.icon[k].state = false;
       }
     }
-    routerstructure.iconstate[key1] = true;
-    routerstructure.iconstate[key0] = true;
+    routerstructure.icon[key1].state = true;
+    routerstructure.icon[key0].state = true;
     this.setState(routerstructure);
   };
 
@@ -148,6 +147,21 @@ class Router extends React.Component<{}, MyComponentState> {
     return buttons;
   };
 
+  createIcon = (iconClass: string, rotate: boolean) => {
+    const icon = [];
+
+    icon.push(
+      <i
+        className={classNames({
+          [iconClass]: true,
+          "fa-spin": rotate,
+        })}
+      ></i>
+    );
+
+    return icon;
+  };
+
   createScrollButton = (key0: string) => {
     const button = [];
     button.push(
@@ -155,68 +169,21 @@ class Router extends React.Component<{}, MyComponentState> {
         to={key0}
         spy={true}
         smooth={true}
-        offset={-120}
+        offset={-240}
         duration={500}
         delay={200}
       >
+        {this.createIcon(
+          this.state.routerstructure.icon[key0].class,
+          this.state.routerstructure.icon[key0].state
+        )}
         <button
           type="button"
-          className="btn btn-outline-light"
-          style={{ minWidth: 110 }}
+          className="btn btn-outline-secondary"
+          style={{ minWidth: 135, marginLeft: "0.5em" }}
           onClick={() => this.redirectToLink(key0, "General")}
         >
           {key0}
-        </button>
-      </Link>
-    );
-
-    if (this.state && this.state.routerstructure) {
-      button.push(
-        <div className="d-none d-md-block">
-          <NavbarCollapse
-            Key={key0}
-            getIconState={this.getIconState}
-            buttons={this.createSubButtonArray(key0)}
-          />
-        </div>
-      );
-    }
-
-    return button;
-  };
-
-  createSubButtonArray = (key0: string) => {
-    const buttons: any = {};
-    const routerstructure = this.state.routerstructure;
-
-    if (routerstructure) {
-      for (var key1 in routerstructure.navKeys[key0]) {
-        buttons[key1] = this.createSubButton(key0, key1);
-      }
-    }
-
-    return buttons;
-  };
-
-  createSubButton = (key0: string, key1: string) => {
-    const button = [];
-
-    button.push(
-      <Link
-        to={key0}
-        spy={true}
-        smooth={true}
-        offset={-120}
-        duration={500}
-        delay={200}
-      >
-        <button
-          type="button"
-          className="btn btn-outline-light"
-          style={{ width: 90, maxHeight: 32 }}
-          onClick={() => this.redirectToLink(key0, key1)}
-        >
-          {key1}
         </button>
       </Link>
     );
@@ -249,31 +216,127 @@ class Router extends React.Component<{}, MyComponentState> {
     const header = [];
     if (this.state && this.state.routerstructure) {
       header.push(
-        <div className="row align-items-center text-left header">
-          <div className="col-md-2 col-3 align-items-center">
-            <RouterDropdownField
-              buttons={this.createScrollButtonArray()}
-              toggleDropDown={() => this.toggleDropDown()}
-              DropdownisOpen={this.state.DropdownisOpen}
-              routerstructure={this.state.routerstructure}
-            />
+        <div className="row">
+          <div className="col">
+            <div className="row header0">
+              <div className="col-2 align-items-center">
+                <RouterDropdownField
+                  buttons={this.createScrollButtonArray()}
+                  toggleDropDown={() => this.toggleDropDown()}
+                  DropdownisOpen={this.state.DropdownisOpen}
+                  routerstructure={this.state.routerstructure}
+                />
+              </div>
+              <div className="col-9 text-left">
+                <img
+                  src={LogoImage}
+                  className="img-fluid"
+                  alt="Responsive image"
+                  style={{ maxHeight: 140, paddingBottom: "0.5em" }}
+                />
+              </div>
+              <div className="col-1" />
+            </div>
+            <div className="row header1">
+              <div className="col text-right text-secondary">
+                <a className="text-secondary" href="tel:07221-3731182">
+                  <h5>{"07221 / 373 11 82"}</h5>
+                </a>
+                <p
+                  className="d-none d-md-block"
+                  style={{ paddingTop: "-0.9em" }}
+                >
+                  {
+                    "Mo, Di: 7:00- 16:00, Mi: 7:00 - 20:00, Do, Fr: 8:00 - 18:00, Sa: 8:00 - 16:00 "
+                  }{" "}
+                </p>
+                <p
+                  className="smallfont d-block d-md-none"
+                  style={{ paddingTop: "-0.9em" }}
+                >
+                  {"Mo, Di: 7:00- 16:00, Mi: 7:00 - 20:00"}
+                  <br />
+                  {"Do, Fr: 8:00 - 18:00, Sa: 8:00 - 16:00 "}
+                </p>
+              </div>
+              <div
+                className="col-lg-2 col-md-3 col-4 text-right text-secondary"
+                style={{ paddingRight: "5vw" }}
+              >
+                <a
+                  className="text-secondary"
+                  href={"https://www.facebook.com/selinteufel/"}
+                  target="_blank"
+                >
+                  <i className="fab fa-facebook-square fa-2x"></i>
+                </a>{" "}
+                <a
+                  className="text-secondary"
+                  href={"https://wa.me/4901773276945"}
+                  target="_blank"
+                >
+                  <i className="fab fa-whatsapp-square fa-2x"></i>
+                </a>{" "}
+                <a
+                  className="text-secondary"
+                  href={"https://www.instagram.com/selin_teufel/"}
+                  target="_blank"
+                >
+                  <i className="fab fa-instagram-square fa-2x"></i>
+                </a>{" "}
+              </div>
+            </div>
+            <div className="row headerb">
+              <div className="col text-right text-secondary minusposition">
+                <a className="text-secondary" href="tel:07221-3731182">
+                  <h5>{"07221 / 373 11 82"}</h5>
+                </a>
+                <p
+                  className="d-none d-md-block"
+                  style={{ paddingTop: "-0.9em" }}
+                >
+                  {
+                    "Mo, Di: 7:00- 16:00, Mi: 7:00 - 20:00, Do, Fr: 8:00 - 18:00, Sa: 8:00 - 16:00 "
+                  }{" "}
+                </p>
+                <p
+                  className="smallfont d-block d-md-none"
+                  style={{ paddingTop: "-0.9em" }}
+                >
+                  {"Mo, Di: 7:00- 16:00, Mi: 7:00 - 20:00"}
+                  <br />
+                  {"Do, Fr: 8:00 - 18:00, Sa: 8:00 - 16:00 "}
+                </p>
+              </div>
+              <div
+                className="col-lg-2 col-md-3 col-4 text-right text-secondary"
+                style={{ paddingRight: "5vw" }}
+              >
+                <a
+                  className="text-secondary"
+                  href={"https://www.facebook.com/selinteufel/"}
+                  target="_blank"
+                >
+                  <i className="fab fa-facebook-square fa-2x"></i>
+                </a>{" "}
+                <a
+                  className="text-secondary"
+                  href={"https://wa.me/4901773276945"}
+                  target="_blank"
+                >
+                  <i className="fab fa-whatsapp-square fa-2x"></i>
+                </a>{" "}
+                <a
+                  className="text-secondary"
+                  href={"https://www.instagram.com/selin_teufel/"}
+                  target="_blank"
+                >
+                  <i className="fab fa-instagram-square fa-2x"></i>
+                </a>{" "}
+              </div>
+            </div>
+            <div className="headerbottomborder"></div>
           </div>
-          <div className="col-md-2 col-1 d-none d-md-block" />
-          <div className="col-md-1 col-3 text-left">
-            <img
-              src={LogoImage}
-              alt=""
-              className="rounded float-left"
-              style={{ opacity: 0.8, maxHeight: 100 }}
-            />
-          </div>
-          <div className="col-md-5 col-3 text-left">
-            <h2 className="cursor-pointer">Teufel Engineering</h2>
-            <h6 className="d-none d-md-block cursor-pointer">
-              Silvan Teufel - Master of Science
-            </h6>
-          </div>
-          <div className="col-md-3 col-1" />
         </div>
       );
     }
@@ -282,31 +345,32 @@ class Router extends React.Component<{}, MyComponentState> {
 
   createFooter = () => {
     const footer = [];
-    /*
-          <a href={'/#/Home'} onClick={this.scrollToBottom}>
-            <p className="text-dark">Kontakt</p>
-          </a>
-*/
+
     footer.push(
-      <div
-        className="row text-light header"
-        style={{
-          position: "relative"
-        }}
-      >
-        <div className="col-4 text-right align-items-bottom">
-          <a href={"/#/Home"} onClick={this.scrollToBottom}>
-            <p className="text-dark">Kontakt</p>
+      <div className="row text-light footer">
+        <div className="col-sm-4 col-0 text-right align-items-bottom">
+          <a
+            className="d-none d-sm-block"
+            href={"/#/Home"}
+            onClick={this.scrollToBottom}
+          >
+            <p className="text-dark">
+              <i className="fas fa-phone"></i> Kontakt
+            </p>
           </a>
         </div>
-        <div className="col-3 text-center align-items-center">
+        <div className="col-sm-3 col-6 text-center align-items-center">
           <a href={"/#/Impressum"} onClick={this.scrollToTop}>
-            <p className="text-dark">Impressum</p>
+            <p className="text-dark">
+              <i className="fas fa-stamp"></i> Impressum
+            </p>
           </a>
         </div>
-        <div className="col-5 text-left align-items-center">
+        <div className="col-sm-5 col-6 text-left align-items-center">
           <a href={"/#/Datenschutz"} onClick={this.scrollToTop}>
-            <p className="text-dark">Datenschutz</p>
+            <p className="text-dark">
+              <i className="fas fa-lock"></i> Datenschutz
+            </p>
           </a>
         </div>
       </div>
@@ -335,14 +399,18 @@ class Router extends React.Component<{}, MyComponentState> {
         <div>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>{"Teufel Engineering - Silvan Teufel"}</title>
+            <title>{"Selin Teufel - Teuflisch Schön"}</title>
             <meta
               name="description"
-              content={"Teufel Engineering - Silvan Teufel - Master of Science"}
+              content={"Teuflisch Schön - Haare, Nageldesign und Kosmetik"}
             />
           </Helmet>
           {this.createHeader()}
-          <div className="container text-light" onClick={this.closeDropDown}>
+          <div
+            className="container text-dark"
+            onClick={this.closeDropDown}
+            style={{ minHeight: "95.5vh" }}
+          >
             {this.createComponents()}
           </div>
           {this.createFooter()}

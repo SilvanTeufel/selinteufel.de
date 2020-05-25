@@ -1,85 +1,46 @@
 import * as React from "react";
-import { Radar } from "react-chartjs-2";
+const LogoImage = require("./Pictures/philosophie.jpg");
 
-
-class Philosophie extends React.Component<{}, {}> {
-  createPlace = () => {
-    const place = [];
-    place.push(<br />);
-    place.push(<br />);
-    place.push(<br />);
-    return place;
-  };
-
+export default class Philosophie extends React.Component<{}, {}> {
   render() {
     return (
       <div className="row">
         <div className="col-md"></div>
-        <div className="col-lg-5  col-12 text-left">
-          <h5 className="cursor-pointer-invert" style={{ marginTop: "1vh" }}>
-            Als freiberuflicher Entwickler habe ich Herausforderungen niemals
-            gescheut, weshalb ich, sowohl im Hardwarebereich (Entwerfen von
-            Platinen, Filtern, Messdatenanalyse, usw.) als auch im
-            Softwarebereich (Programmieren von Mikrocontrollern), bis hin zur
-            Entwicklung von Datenbanksystemen mit modernen Frontendtechnologien,
-            Erfahrung sammeln konnte. Ich habe es mir zu meiner Aufgabe gemacht
-            Probleme zu lösen - und meine Leidenschaft darin gefunden. Neugier,
-            Courage und unkonventionelles Denken sind die Werkzeuge, mit denen
-            ich arbeite. Falls Sie diese Werte ebenfalls schätzen, würde es mich
-            freuen mit Ihnen zusammenzuarbeiten.
+        <div className="col-lg-5  col-12 text-left justify-content-center align-self-center">
+          {/* <h5>
+            Teuflisch schön ist ein Beautysalon, der sehr viel wert auf
+            Persönlichkeit legt. Von Kopf bis Fuß verschönern wir unsere Kunden.
+            Wir sind hoch qualifizierte Friseurmeisterinnen und Kosmetikerinnen,
+            welche nur die höchste Qualität an Produkten verwendet. Unsere
+            Aufgabe ist der Schönheit und Pflege des Körpers keine Grenzen zu
+            setzen.
+          </h5> */}
+          <h5>
+            <strong>
+              "Ein Lächeln ist das schönste Make-up, das eine Frau tragen kann."
+            </strong>
+            <br /> <br />
+            Wir von Teuflisch schön leben nach diesem Motto und zaubern Euch,
+            unseren liebsten Kunden, ein Lächeln ins Gesicht. Die Natürlichkeit
+            und Eleganz sowie die Professionalität steht bei uns an erster
+            Stelle. Die Wünsche unserer Kunden werden mit langjähriger
+            Berufserfahrung gepaart um die perfekten Ergebnisse zu erzielen.
+            Hiermit stehen wir seit 2013 für den Namen Teuflisch Schön.
           </h5>
         </div>
-        <div className="col-lg-6  col-12 radarImage">
-          <Radar
-            data={{
-              labels: [
-                "ExpressJS",
-                "ReactJS",
-                "AngularJS",
-                "Embedded C++",
-                "Swimming",
-                "Biking",
-                "Electronics",
-                "Strength",
-                "Agility",
-                "Stamina"
-              ],
-              datasets: [
-                {
-                  label: "Skills",
-                  backgroundColor: "rgba(7, 29, 202 ,0.2)",
-                  borderColor: "rgba(7, 29, 202 ,1)",
-                  hoverBackgroundColor: "rgba(7, 29, 202 ,0.4)",
-                  hoverBorderColor: "rgba(7, 29, 202 ,1)",
-                  data: [75, 97, 73, 88, 5, 75, 95, 100, 15, 70]
-                }
-              ]
-            }}
-            options={{
-              legend: {
-                display: false,
-                labels: {
-                  fontSize: 12,
-                  fontStyle: "bold",
-                  fontColor: "rgb(0, 0, 0)"
-                }
-              },
-              scale: {
-                pointLabels: {
-                  fontSize: 12,
-                  fontStyle: "bold",
-                  fontColor: "rgb(0, 0, 0)"
-                }
-              }
-            }}
+        <div className="col-lg-5  col-12">
+          <img
+            src={LogoImage}
+            className="img-fluid border border-secondary rounded"
+            alt="Responsive image"
+            style={{ marginBottom: "1em" }}
           />
         </div>
+        <div className="col-md"></div>
       </div>
     );
   }
 }
-
-export default Philosophie;
 
 /*
 style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}

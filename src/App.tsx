@@ -2,7 +2,7 @@ import * as React from "react";
 import "./App.css";
 import Router from "./components/Router/Router";
 
-const background = require("./components/Pictures/background11111111.jpg");
+const background = require("./components/Pictures/background1111111.jpg");
 const { detect } = require("detect-browser");
 const browser = detect();
 
@@ -18,7 +18,7 @@ class App extends React.Component<{}, {}> {
       );
     } else {
       app.push(
-        <div style={{ backgroundColor: "lightgrey" }}>
+        <div style={{ backgroundColor: "rgb(222, 215, 212)" }}>
           {
             <img
               src={background}
@@ -28,7 +28,7 @@ class App extends React.Component<{}, {}> {
                 position: "fixed",
                 display: "block",
                 width: "100%",
-                height: "100%"
+                height: "100%",
               }}
             />
           }

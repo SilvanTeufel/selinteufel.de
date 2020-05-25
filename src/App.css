@@ -22,7 +22,7 @@
 }
 
 .radarImage {
-  background-image: url("./components/Pictures/Brain2.png");
+  /* background-image: url("./components/Pictures/Brain2.png");*/
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   /*background-size: cover; /* Resize the background image to cover the entire container */
