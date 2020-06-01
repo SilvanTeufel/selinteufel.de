@@ -4,7 +4,7 @@ const Logoak = require("./Pictures/ak.png");
 const Logopb = require("./Pictures/phibrows.png");
 const LogoImage: any = [];
 
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 6; i++) {
   LogoImage[i] = require(`./Pictures/Microblading/${i}.jpeg`);
 }
 
@@ -47,7 +47,7 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
 
   tick() {
     console.log(this.state.carouselID);
-    if (this.state.carouselID < 14) {
+    if (this.state.carouselID < 5) {
       var carouselClasses = this.state.carouselClasses;
       carouselClasses[this.state.carouselID] = "";
       carouselClasses[this.state.carouselID + 1] = "active";
@@ -78,7 +78,7 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
 
   prev() {
     console.log(this.state.carouselID);
-    if (this.state.carouselID < 14 && this.state.carouselID > 0) {
+    if (this.state.carouselID < 5 && this.state.carouselID > 0) {
       var carouselClasses = this.state.carouselClasses;
       carouselClasses[this.state.carouselID] = "";
       carouselClasses[this.state.carouselID - 1] = "active";
@@ -110,7 +110,7 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
   createPictures = () => {
     const pictures = [];
 
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 6; i++) {
       pictures.push(
         <div className={"carousel-item" + this.state.carouselClasses[i]}>
           <img
@@ -155,7 +155,7 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
                   <td className="text-right">390 €</td>
                 </tr>
                 <tr>
-                  <td>Powderbrows + Färben</td>
+                  <td>Powderbrows</td>
                   <td className="text-right">390 €</td>
                 </tr>
                 <tr>
@@ -164,11 +164,11 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
                 </tr>
                 <tr>
                   <td>Perm. Lidstrich Fein</td>
-                  <td className="text-right">220 €</td>
+                  <td className="text-right">290 €</td>
                 </tr>
                 <tr>
                   <td>Perm. Lidstrich Schattiert</td>
-                  <td className="text-right">290 €</td>
+                  <td className="text-right">320 €</td>
                 </tr>
               </tbody>
             </table>
@@ -205,7 +205,7 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
             <br />
           </ul>
         </div>
-        <div className="col-lg-5  col-12">
+        <div className="col-lg-5  col-12 justify-content-center align-self-center">
           <div
             id="carouselExampleSlidesOnly"
             className="carousel slide "

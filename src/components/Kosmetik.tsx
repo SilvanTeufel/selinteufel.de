@@ -19,10 +19,10 @@ export default class Kosmetik extends React.Component<{}, {}> {
           <ul className="list-unstyled h5">
             <li>
               Gesichtsbehandlungen werden von unserer Friseurmeisterin und
-              Kosmetikerin Ariane Seiler durchgeführt. Mit viel Erfahrung,
-              Gefühl und sorgfältig ausgewählten Naturprodukten werden die
-              Behandlungen durchgeführt. Vereinbaren Sie einen Termin und
-              Genießen sie die Entspannung in unseren schönen Räumlichkeiten.
+              Kosmetikerin Ariane Seiler praktiziert. Mit viel Erfahrung, Gefühl
+              und sorgfältig ausgewählten Naturprodukten werden die Behandlungen
+              durchgeführt. Vereinbaren Sie einen Termin und Genießen sie die
+              Entspannung in unseren schönen Räumlichkeiten.
             </li>
             <br />
             <br />
@@ -41,7 +41,7 @@ export default class Kosmetik extends React.Component<{}, {}> {
                   <td className="text-right">59 €</td>
                 </tr>
                 <tr>
-                  <td>Wimpernwelle + Färben</td>
+                  <td>Wimpernwelle + färben</td>
                   <td className="text-right">71 €</td>
                 </tr>
                 <tr>
@@ -57,7 +57,7 @@ export default class Kosmetik extends React.Component<{}, {}> {
                   <td className="text-right">ab 6 €</td>
                 </tr>
                 <tr>
-                  <td>Wimpern Färben</td>
+                  <td>Wimpern färben</td>
                   <td className="text-right">ab 12 €</td>
                 </tr>
               </tbody>

@@ -25,7 +25,7 @@ export default class Haare extends React.Component<{}, TimerStates> {
                   Wir, die Friseurmeister bei Teuflisch Schön, legen sehr viel
                   Wert auf die individuelle Beratung des Kunden. Mit viel
                   Kreativität und Freude zum Beruf wird auf jeden Charakter
-                  individuell eingegangen. Wir arbeiten im Farb-, Styling- und
+                  eingegangen. Wir arbeiten im Farb-, Styling- und
                   Harrpflegebereich ausschließlich mit Produkten der Firma LA
                   Biosthetique.
                 </li>

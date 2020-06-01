@@ -1,5 +1,5 @@
 import * as React from "react";
-const kontakt = require("./Pictures/kontakt.jpg");
+const kontakt = require("./Pictures/salon.png");
 
 interface MyComponentStates {
   formulardata: any[];

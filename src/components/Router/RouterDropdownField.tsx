@@ -63,7 +63,7 @@ class RouterDropdownField extends React.Component<
                   className={classNames({
                     "fa-stack fa-2x": true,
                   })}
-                  style={{ paddingLeft: "0.25vw", paddingTop: "0.25vh" }}
+                  style={{ paddingLeft: "0.25vw", marginTop: "-0.25em" }}
                 >
                   <i
                     className={classNames({

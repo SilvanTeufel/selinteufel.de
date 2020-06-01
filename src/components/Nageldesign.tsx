@@ -63,7 +63,7 @@ export default class Nageldesign extends React.Component<{}, {}> {
             <br />
           </ul>
         </div>
-        <div className="col-lg-5  col-12">
+        <div className="col-lg-5  col-12 justify-content-center align-self-center">
           <img
             src={LogoImage}
             className="img-fluid border border-secondary rounded"

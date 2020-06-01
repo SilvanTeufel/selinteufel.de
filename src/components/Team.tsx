@@ -118,9 +118,16 @@ export default class Team extends React.Component<{}, TimerStates> {
             className="img-fluid border border-secondary rounded"
             src={LogoImage[i]}
             alt={`${i} Slide`}
-            style={{ height: 400 }}
+            style={{
+              maxHeight: 400,
+            }}
           />
-          <div className="carousel-caption text-center main-point">
+          <div
+            className="carousel-caption text-center"
+            style={{
+              top: "-1em",
+            }}
+          >
             <h3>
               <strong>{this.state.names[i]}</strong>
             </h3>

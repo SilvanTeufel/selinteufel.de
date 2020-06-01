@@ -99,7 +99,7 @@ class Router extends React.Component<{}, MyComponentState> {
     if (this.state.DropdownisOpen && window.innerWidth < 1200) {
       this.setState({ DropdownisOpen: false });
     } else if (window.innerWidth >= 1200 && !this.state.DropdownisOpen) {
-      this.setState({ DropdownisOpen: true });
+      // this.setState({ DropdownisOpen: true });
     }
   };
 
@@ -286,15 +286,9 @@ class Router extends React.Component<{}, MyComponentState> {
                 </a>{" "}
               </div>
             </div>
-            <div className="row headerb">
+            {/* <div className="row headerb">
               <div className="col text-right text-secondary minusposition">
-                <a className="text-secondary" href="tel:07221-3731182">
-                  <h5>{"07221 / 373 11 82"}</h5>
-                </a>
-                <p
-                  className="d-none d-md-block"
-                  style={{ paddingTop: "-0.9em" }}
-                >
+                <p className="d-none d-md-block" style={{ marginTop: "1em" }}>
                   {
                     "Mo, Di: 7:00- 16:00, Mi: 7:00 - 20:00, Do, Fr: 8:00 - 18:00, Sa: 8:00 - 16:00 "
                   }{" "}
@@ -335,7 +329,7 @@ class Router extends React.Component<{}, MyComponentState> {
                 </a>{" "}
               </div>
             </div>
-            <div className="headerbottomborder"></div>
+            <div className="headerbottomborder"></div> */}
           </div>
         </div>
       );
@@ -396,7 +390,7 @@ class Router extends React.Component<{}, MyComponentState> {
     return (
       <HashRouter>
         {this.createRedirections()}
-        <div>
+        <div className="nooverflowx">
           <Helmet>
             <meta charSet="utf-8" />
             <title>{"Selin Teufel - Teuflisch Schön"}</title>

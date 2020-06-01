@@ -4,7 +4,7 @@ const Logogl = require("./Pictures/gl.png");
 
 const LogoImage: any = [];
 
-for (let i = 0; i < 17; i++) {
+for (let i = 0; i < 4; i++) {
   LogoImage[i] = require(`./Pictures/Haare/${i}.jpeg`);
 }
 
@@ -48,7 +48,7 @@ export default class Verlängerung extends React.Component<{}, TimerStates> {
 
   tick() {
     console.log(this.state.carouselID);
-    if (this.state.carouselID < 16) {
+    if (this.state.carouselID < 3) {
       var carouselClasses = this.state.carouselClasses;
       carouselClasses[this.state.carouselID] = "";
       carouselClasses[this.state.carouselID + 1] = "active";
@@ -79,7 +79,7 @@ export default class Verlängerung extends React.Component<{}, TimerStates> {
 
   prev() {
     console.log(this.state.carouselID);
-    if (this.state.carouselID < 16 && this.state.carouselID > 0) {
+    if (this.state.carouselID < 3 && this.state.carouselID > 0) {
       var carouselClasses = this.state.carouselClasses;
       carouselClasses[this.state.carouselID] = "";
       carouselClasses[this.state.carouselID - 1] = "active";
@@ -111,7 +111,7 @@ export default class Verlängerung extends React.Component<{}, TimerStates> {
   createPictures = () => {
     const pictures = [];
 
-    for (let i = 0; i < 17; i++) {
+    for (let i = 0; i < 4; i++) {
       pictures.push(
         <div className={"carousel-item" + this.state.carouselClasses[i]}>
           <img
@@ -175,7 +175,7 @@ export default class Verlängerung extends React.Component<{}, TimerStates> {
             <br />
           </ul>
         </div>
-        <div className="col-lg-4  col-12">
+        <div className="col-lg-4  col-12 justify-content-center align-self-center">
           <div
             id="carouselExampleSlidesOnly"
             className="carousel slide "
