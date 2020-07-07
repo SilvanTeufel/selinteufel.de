@@ -25,7 +25,7 @@ class Router extends React.Component<{}, MyComponentState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      DropdownisOpen: true,
+      DropdownisOpen: window.innerWidth < 1200 ? false : true,
       routerstructure: {
         navKeys: {
           Philosophie: { General: false },
@@ -95,9 +95,16 @@ class Router extends React.Component<{}, MyComponentState> {
   };
 
   closeDropDown = () => {
-    console.log(window.innerWidth);
     if (this.state.DropdownisOpen && window.innerWidth < 1200) {
       this.setState({ DropdownisOpen: false });
+    } else if (window.innerWidth >= 1200 && !this.state.DropdownisOpen) {
+      // this.setState({ DropdownisOpen: true });
+    }
+  };
+
+  openDropDown = () => {
+    if (!this.state.DropdownisOpen && window.innerWidth < 1200) {
+      this.setState({ DropdownisOpen: true });
     } else if (window.innerWidth >= 1200 && !this.state.DropdownisOpen) {
       // this.setState({ DropdownisOpen: true });
     }
@@ -116,12 +123,12 @@ class Router extends React.Component<{}, MyComponentState> {
     routerstructure.navKeys[key0][key1] = true;
     this.toggleIconState(key0, key1);
     this.setState({ routerstructure });
+    this.closeDropDown();
   };
 
   toggleIconState = (key0: string, key1: string) => {
     const routerstructure = this.state.routerstructure;
     for (var k in routerstructure.icon) {
-      console.log(k);
       if (k !== key0) {
         routerstructure.icon[k].state = false;
       }

@@ -46,7 +46,6 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
   }
 
   tick() {
-    console.log(this.state.carouselID);
     if (this.state.carouselID < 5) {
       var carouselClasses = this.state.carouselClasses;
       carouselClasses[this.state.carouselID] = "";
@@ -77,7 +76,6 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
   }
 
   prev() {
-    console.log(this.state.carouselID);
     if (this.state.carouselID < 5 && this.state.carouselID > 0) {
       var carouselClasses = this.state.carouselClasses;
       carouselClasses[this.state.carouselID] = "";
@@ -140,10 +138,11 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
             </li>
             <br />
             <br />
+
             <table className="table table-sm">
               <thead>
                 <tr>
-                  <th scope="col">Leistung</th>
+                  <th scope="col">Augenbrauen</th>
                   <th scope="col" className="text-right">
                     Preis
                   </th>
@@ -151,27 +150,65 @@ export default class Permanentmakeup extends React.Component<{}, TimerStates> {
               </thead>
               <tbody>
                 <tr>
-                  <td>Microblading</td>
-                  <td className="text-right">390 €</td>
+                  <td>Microblading / Härchenzeichnung</td>
+                  <td className="text-right">420 €</td>
                 </tr>
                 <tr>
-                  <td>Powderbrows</td>
-                  <td className="text-right">390 €</td>
-                </tr>
-                <tr>
-                  <td>Aquarell Lips </td>
-                  <td className="text-right">450 €</td>
-                </tr>
-                <tr>
-                  <td>Perm. Lidstrich Fein</td>
-                  <td className="text-right">290 €</td>
-                </tr>
-                <tr>
-                  <td>Perm. Lidstrich Schattiert</td>
-                  <td className="text-right">320 €</td>
+                  <td>Powderbrows / Puder Look</td>
+                  <td className="text-right">420 €</td>
                 </tr>
               </tbody>
             </table>
+
+            <table className="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Augen</th>
+                  <th scope="col" className="text-right">
+                    Preis
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lidstrich fein oben</td>
+                  <td className="text-right">290 €</td>
+                </tr>
+                <tr>
+                  <td>Lidstrich schattiert</td>
+                  <td className="text-right">320 €</td>
+                </tr>
+                <tr>
+                  <td>Lidstrich fein oben und unten</td>
+                  <td className="text-right">390 €</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table className="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Lippen</th>
+                  <th scope="col" className="text-right">
+                    Preis
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lippenumrandung + Schattierung</td>
+                  <td className="text-right">490 €</td>
+                </tr>
+              </tbody>
+            </table>
+            <li className="text-right">
+              <li>
+                <em>
+                  Das nacharbeiten innerhalb von drei Monaten ist in den Preisen
+                  inbegriffen.
+                </em>
+              </li>
+            </li>
             <li className="text-right font-weight-bold">
               <br />
               <li>Wir verwenden ausschließlich Produkte von:</li>

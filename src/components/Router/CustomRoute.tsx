@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Route, RouteProps } from 'react-router-dom';
+import * as React from "react";
+import { Route, RouteProps } from "react-router-dom";
 
 interface Props extends RouteProps {
   component: React.ComponentClass<any>;
@@ -20,28 +20,26 @@ export class CustomRoute extends React.Component<Props, State> {
   createKeys = (path: any) => {
     const keys: string[] = [];
     const patharray = path.split("/");
-    for (let i = 1; i < patharray.length; i++){
-        keys[i-1] = patharray[i];
+    for (let i = 1; i < patharray.length; i++) {
+      keys[i - 1] = patharray[i];
     }
-    return keys
-  }
+    return keys;
+  };
 
-  render() :JSX.Element {
-
+  render(): JSX.Element {
     const { component: Component, ...rest } = this.props;
     return (
       <div>
         <Route
           {...rest}
-          render={props =>
+          render={(props) =>
             this.state.loading ? (
               <div>'loading'</div>
             ) : (
-                <>
-                  <Component {...props} Key={this.createKeys(this.props.path)} />
-                </>
-
-              )
+              <>
+                <Component {...props} Key={this.createKeys(this.props.path)} />
+              </>
+            )
           }
         />
       </div>

@@ -47,7 +47,6 @@ export default class Verlängerung extends React.Component<{}, TimerStates> {
   }
 
   tick() {
-    console.log(this.state.carouselID);
     if (this.state.carouselID < 3) {
       var carouselClasses = this.state.carouselClasses;
       carouselClasses[this.state.carouselID] = "";
@@ -78,7 +77,6 @@ export default class Verlängerung extends React.Component<{}, TimerStates> {
   }
 
   prev() {
-    console.log(this.state.carouselID);
     if (this.state.carouselID < 3 && this.state.carouselID > 0) {
       var carouselClasses = this.state.carouselClasses;
       carouselClasses[this.state.carouselID] = "";

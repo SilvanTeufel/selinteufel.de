@@ -63,7 +63,6 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
 
   createHome = () => {
     const home = [];
-    console.log(this.props.Key);
     home.push(
       <div className="row">
         <div className="col">
