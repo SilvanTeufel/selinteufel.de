@@ -18,12 +18,12 @@ class App extends React.Component<{}, {}> {
       );
     } else {
       app.push(
-        <div style={{ backgroundColor: "rgb(222, 215, 212)" }}>
+        <div style={{ backgroundColor: "lightgrey" }}>
           {
             <img
               src={background}
               alt=""
-              className="rounded float-left"
+              className="rounded float-left d-none d-sm-flex"
               style={{
                 position: "fixed",
                 display: "block",

@@ -1,6 +1,15 @@
+.header {
+  background-color: rgba(255, 255, 255, 1);
+  position: fixed;
+  z-index: 50;
+  border-bottom: 0.02em solid rgb(0, 0, 0);
+  width: 104%;
+  height: 12vh;
+}
+
 .header0 {
   background-color: rgba(255, 255, 255, 1);
-  position: relative;
+  /* position: relative; */
   z-index: 4;
 
   width: 104%;
@@ -8,7 +17,7 @@
 
 .header1 {
   background-color: rgba(255, 255, 255, 1);
-  position: relative;
+  /* position: relative; */
   z-index: 3;
 
   width: 104%;
@@ -44,7 +53,6 @@
   bottom: 0;
   z-index: 3;
   width: 104%;
-
   border-top: 0.01em solid rgb(0, 0, 0);
 }
 

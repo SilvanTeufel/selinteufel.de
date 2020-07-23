@@ -120,6 +120,9 @@
 .margintop {
   margin-top: 0.2em;
 }
+.marginbottom {
+  margin-bottom: 0.2em;
+}
 
 @keyframes turner {
   from {

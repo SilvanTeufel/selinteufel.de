@@ -223,9 +223,9 @@ class Router extends React.Component<{}, MyComponentState> {
     const header = [];
     if (this.state && this.state.routerstructure) {
       header.push(
-        <div className="row">
+        <div className="row header">
           <div className="col">
-            <div className="row header0">
+            <div className="row d-none d-sm-flex">
               <div className="col-2 align-items-center">
                 <RouterDropdownField
                   buttons={this.createScrollButtonArray()}
@@ -244,7 +244,25 @@ class Router extends React.Component<{}, MyComponentState> {
               </div>
               <div className="col-1" />
             </div>
-            <div className="row header1">
+            <div className="row d-flex d-sm-none">
+              <div className="col-2 align-items-center">
+                <RouterDropdownField
+                  buttons={this.createScrollButtonArray()}
+                  toggleDropDown={() => this.toggleDropDown()}
+                  DropdownisOpen={this.state.DropdownisOpen}
+                  routerstructure={this.state.routerstructure}
+                />
+              </div>
+              <div className="col-10 text-left">
+                <img
+                  src={LogoImage}
+                  className="img-fluid"
+                  alt="Responsive image"
+                  style={{ marginTop: "0.75em" }}
+                />
+              </div>
+            </div>
+            {/* <div className="row">
               <div className="col text-right text-secondary">
                 <a className="text-secondary" href="tel:07221-3731182">
                   <h5>{"07221 / 373 11 82"}</h5>
@@ -292,7 +310,7 @@ class Router extends React.Component<{}, MyComponentState> {
                   <i className="fab fa-instagram-square fa-2x"></i>
                 </a>{" "}
               </div>
-            </div>
+            </div> */}
             {/* <div className="row headerb">
               <div className="col text-right text-secondary minusposition">
                 <p className="d-none d-md-block" style={{ marginTop: "1em" }}>

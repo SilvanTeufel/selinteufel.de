@@ -71,7 +71,7 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
               <div className="col">
                 <div className="row text-left align-items-center">
                   <div className="col-md-1 col-3">
-                    <i className="fas fa-yin-yang fa-3x margintop"></i>
+                    <i className="fas fa-yin-yang fa-3x margintop marginbottom"></i>
                   </div>
                   <div className="col-md-11 col-9">
                     <h2 className="main-point">{"Philosophie"}</h2>
@@ -91,7 +91,7 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
               <div className="col">
                 <div className="row text-left align-items-center">
                   <div className="col-md-1 col-3">
-                    <i className="fas fa-cut fa-3x margintop"></i>
+                    <i className="fas fa-cut fa-3x margintop marginbottom"></i>
                   </div>
                   <div className="col-md-11 col-9">
                     <h2 className="main-point">{"Haare"}</h2>
@@ -111,7 +111,7 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
               <div className="col">
                 <div className="row text-left align-items-center">
                   <div className="col-md-1 col-3">
-                    <i className="fas fa-ruler-combined fa-3x margintop"></i>
+                    <i className="fas fa-ruler-combined fa-3x margintop marginbottom"></i>
                   </div>
                   <div className="col-md-11 col-9">
                     <h2 className="main-point">{"Extensions"}</h2>
@@ -131,7 +131,7 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
               <div className="col">
                 <div className="row text-left align-items-center">
                   <div className="col-md-1 col-3">
-                    <i className="fas fa-paint-brush fa-3x margintop"></i>
+                    <i className="fas fa-paint-brush fa-3x margintop marginbottom"></i>
                   </div>
                   <div className="col-md-11 col-9">
                     <h2 className="main-point">{"Nageldesign"}</h2>
@@ -151,7 +151,7 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
               <div className="col">
                 <div className="row text-left align-items-center">
                   <div className="col-md-1 col-3">
-                    <i className="fas fa-sun fa-3x margintop"></i>
+                    <i className="fas fa-sun fa-3x margintop marginbottom"></i>
                   </div>
                   <div className="col-md-11 col-9">
                     <h2 className="main-point">{"Kosmetik"}</h2>
@@ -171,7 +171,7 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
               <div className="col">
                 <div className="row text-left align-items-center">
                   <div className="col-md-1 col-3">
-                    <i className="fas fa-moon fa-3x margintop"></i>
+                    <i className="fas fa-moon fa-3x margintop marginbottom"></i>
                   </div>
                   <div className="col-md-11 col-9">
                     <h2 className="main-point">{"Perm. Makeup"}</h2>
@@ -191,7 +191,7 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
               <div className="col">
                 <div className="row text-left align-items-center">
                   <div className="col-md-1 col-3">
-                    <i className="fas fa-user fa-3x margintop"></i>
+                    <i className="fas fa-user fa-3x margintop marginbottom"></i>
                   </div>
                   <div className="col-md-11 col-9">
                     <h2 className="main-point">{"Team"}</h2>
@@ -211,7 +211,7 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
               <div className="col">
                 <div className="row text-left align-items-center">
                   <div className="col-md-1 col-3">
-                    <i className="fas fa-phone fa-3x margintop"></i>
+                    <i className="fas fa-phone fa-3x margintop marginbottom"></i>
                   </div>
                   <div className=" col-md-11 col-9">
                     <h2 className="main-point">{"Kontakt"}</h2>
