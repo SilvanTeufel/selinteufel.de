@@ -3,9 +3,9 @@
   left: -13em;
   width: 13em;
   height: 100vh;
-  top: 11.85vh;
+  top: 8.9em;
   z-index: 3;
-  border-top-right-radius: 0.2em;
+
   background-color: rgb(255, 255, 255);
   border-color: black;
 
@@ -34,9 +34,9 @@
   left: 0em;
   width: 13em;
   height: 100vh;
-  top: 11.85vh;
+  top: 8.9em;
   z-index: 3;
-  border-top-right-radius: 0.2em;
+
   background-color: rgb(255, 255, 255);
   border-color: black;
 
@@ -93,9 +93,9 @@
     left: -104vw;
     width: 104vw;
     height: 100vh;
-    top: 11.85vh;
+    top: 4.4em;
     z-index: 3;
-    border-top-right-radius: 0.2em;
+
     background-color: rgb(255, 255, 255);
     border-color: black;
 
@@ -105,6 +105,7 @@
     animation-delay: 0s;
 
     border-right: 0.02em solid rgb(46, 45, 45);
+    border-top: 0.02em solid rgb(46, 45, 45);
   }
 
   @-webkit-keyframes slidein {
@@ -124,9 +125,9 @@
     left: 0em;
     width: 104vw;
     height: 100vh;
-    top: 11.85vh;
+    top: 4.4em;
     z-index: 3;
-    border-top-right-radius: 0.2em;
+
     background-color: rgb(255, 255, 255);
     border-color: black;
 
@@ -136,6 +137,7 @@
     animation-delay: 0s;
 
     border-right: 0.02em solid rgb(46, 45, 45);
+    border-top: 0.02em solid rgb(46, 45, 45);
   }
 
   @-webkit-keyframes slideout {

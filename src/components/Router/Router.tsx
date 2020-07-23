@@ -95,7 +95,7 @@ class Router extends React.Component<{}, MyComponentState> {
   };
 
   closeDropDown = () => {
-    if (this.state.DropdownisOpen && window.innerWidth < 1200) {
+    if (this.state.DropdownisOpen && window.innerWidth < 1500) {
       this.setState({ DropdownisOpen: false });
     } else if (window.innerWidth >= 1200 && !this.state.DropdownisOpen) {
       // this.setState({ DropdownisOpen: true });
@@ -103,7 +103,7 @@ class Router extends React.Component<{}, MyComponentState> {
   };
 
   openDropDown = () => {
-    if (!this.state.DropdownisOpen && window.innerWidth < 1200) {
+    if (!this.state.DropdownisOpen && window.innerWidth < 1500) {
       this.setState({ DropdownisOpen: true });
     } else if (window.innerWidth >= 1200 && !this.state.DropdownisOpen) {
       // this.setState({ DropdownisOpen: true });
