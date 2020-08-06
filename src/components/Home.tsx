@@ -8,6 +8,7 @@ import Nageldesign from "./Nageldesign";
 import Kosmetik from "./Kosmetik";
 import Permanentmakeup from "./Permanentmakeup";
 import Team from "./Team";
+import Jobs from "./Jobs";
 import Verlängerung from "./Verlängerung";
 
 import "./css/box.css";
@@ -200,6 +201,26 @@ class Home extends React.Component<MyComponentProps, MyComponentStates> {
                 <div className="row align-items-center">
                   <div className="col-12">
                     <Team />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Element>
+
+          <Element name="Jobs" className="element" id="E1">
+            <div className="row boxkit-mid border border-dark rounded">
+              <div className="col">
+                <div className="row text-left align-items-center">
+                  <div className="col-md-1 col-3">
+                    <i className="fas fa-hand-scissors fa-3x margintop marginbottom"></i>
+                  </div>
+                  <div className="col-md-11 col-9">
+                    <h2 className="main-point">{"Jobs"}</h2>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12">
+                    <Jobs />
                   </div>
                 </div>
               </div>

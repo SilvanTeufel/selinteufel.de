@@ -47,6 +47,9 @@ class Router extends React.Component<{}, MyComponentState> {
           Team: {
             General: false,
           },
+          Jobs: {
+            General: false,
+          },
           Kontakt: { General: false },
         },
         footKeys: {
@@ -75,6 +78,10 @@ class Router extends React.Component<{}, MyComponentState> {
           Team: {
             state: false,
             class: "fas fa-user fa-lg",
+          },
+          Jobs: {
+            state: false,
+            class: "fas fa-hand-scissors fa-lg",
           },
           Kontakt: {
             state: false,
@@ -362,42 +369,6 @@ class Router extends React.Component<{}, MyComponentState> {
     return header;
   };
 
-  createFooter = () => {
-    const footer = [];
-
-    footer.push(
-      <div className="row text-light footer">
-        <div className="col-sm-4 col-0 text-right align-items-bottom">
-          <a
-            className="d-none d-sm-block"
-            href={"/#/Home"}
-            onClick={this.scrollToBottom}
-          >
-            <p className="text-dark">
-              <i className="fas fa-phone"></i> Kontakt
-            </p>
-          </a>
-        </div>
-        <div className="col-sm-3 col-6 text-center align-items-center">
-          <a href={"/#/Impressum"} onClick={this.scrollToTop}>
-            <p className="text-dark">
-              <i className="fas fa-stamp"></i> Impressum
-            </p>
-          </a>
-        </div>
-        <div className="col-sm-5 col-6 text-left align-items-center">
-          <a href={"/#/Datenschutz"} onClick={this.scrollToTop}>
-            <p className="text-dark">
-              <i className="fas fa-lock"></i> Datenschutz
-            </p>
-          </a>
-        </div>
-      </div>
-    );
-
-    return footer;
-  };
-
   createRedirections = () => {
     for (var key0 in this.state.routerstructure.navKeys) {
       for (var key1 in this.state.routerstructure.navKeys[key0]) {
@@ -432,7 +403,6 @@ class Router extends React.Component<{}, MyComponentState> {
           >
             {this.createComponents()}
           </div>
-          {this.createFooter()}
         </div>
       </HashRouter>
     );

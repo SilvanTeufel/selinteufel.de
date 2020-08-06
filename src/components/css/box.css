@@ -120,8 +120,26 @@
 .margintop {
   margin-top: 0.2em;
 }
+
+.margintop2 {
+  margin-top: 1em;
+}
 .marginbottom {
   margin-bottom: 0.2em;
+}
+
+.marginleft {
+  margin-left: 0.5em;
+}
+
+.greatmargintop {
+  margin-top: 7vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .greatmargintop {
+    margin-top: 0vh;
+  }
 }
 
 @keyframes turner {

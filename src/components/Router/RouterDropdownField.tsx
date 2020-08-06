@@ -97,6 +97,25 @@ class RouterDropdownField extends React.Component<
       </div>
     );
 
+    row.push(
+      <div className="row text-light greatmargintop footer">
+        <div className="col-6 col-sm-12 text-center align-items-center">
+          <a href={"/#/Impressum"}>
+            <p className="text-dark">
+              <i className="fas fa-stamp"></i> Impressum
+            </p>
+          </a>
+        </div>
+        <div className="col-6 col-sm-12 text-center  align-items-center">
+          <a href={"/#/Datenschutz"}>
+            <p className="text-dark">
+              <i className="fas fa-lock"></i> Datenschutz
+            </p>
+          </a>
+        </div>
+      </div>
+    );
+
     return row;
   };
 
