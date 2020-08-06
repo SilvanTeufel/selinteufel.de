@@ -53,18 +53,6 @@ class RouterDropdownField extends React.Component<
               <br />
               {"Sa: 8:00 - 16:00 "}
             </p>
-            <p
-              className="smallfont d-block d-md-none"
-              style={{ paddingTop: "-0.9em" }}
-            >
-              {"Mo, Di: 7:00- 16:00,"}
-              <br />
-              {"Mi: 7:00 - 20:00"}
-              <br />
-              {"Do, Fr: 8:00 - 18:00,"}
-              <br />
-              {"Sa: 8:00 - 16:00 "}
-            </p>
           </div>
         </div>
         <div className="row">
@@ -94,6 +82,10 @@ class RouterDropdownField extends React.Component<
             </a>
           </div>
         </div>
+        <div
+          className="row d-sm-none d-block"
+          style={{ marginBottom: "1.5em" }}
+        ></div>
       </div>
     );
 
