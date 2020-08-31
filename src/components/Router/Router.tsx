@@ -77,7 +77,7 @@ class Router extends React.Component<{}, MyComponentState> {
           },
           Team: {
             state: false,
-            class: "fas fa-user fa-lg",
+            class: "fas fa-user fa-lg marginteam",
           },
           Jobs: {
             state: false,
