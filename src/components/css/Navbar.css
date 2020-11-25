@@ -61,10 +61,10 @@
 }
 
 .navicon {
-  padding-top: 3.5em;
-  margin-left: -1em;
+  top: 0.5em;
+  padding-left: 0.5em;
   z-index: 20;
-  position: fixed;
+  position: absolute;
 }
 
 .dropdownelement {
